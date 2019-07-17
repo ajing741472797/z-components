@@ -1,6 +1,7 @@
 <template>
     <button class="z-button" :class="{[`icon-${iconPosition}`]:true}">
-        <z-icon v-if="icon" :name="icon"></z-icon>
+        <z-icon class="icon" v-if="icon" :name="icon"></z-icon>
+        <z-icon class="loading" name="loading"></z-icon>
         <div class="content">
         <slot></slot>
         </div>
@@ -25,6 +26,10 @@ export default {
 </script>
 
 <style lang="scss">
+        @keyframes spin{
+            0% {transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
  .z-button{
             font-size: var(--font-size);
             height: var(--button-height);
@@ -64,7 +69,17 @@ export default {
                 order:2
             }
         }
+         .loading{
+            animation: spin 2s infinite linear;
+
+
         }
+        }
+
+
+
+        
+
 
 </style>
 
