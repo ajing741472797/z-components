@@ -17,7 +17,7 @@
             --color:#333;
             --border-radius:4px;
             --border-color:#999;
-            --border-color-hover:#666
+            --border-color-hover:red
         }
         #app{
             margin: 20px;
@@ -34,7 +34,12 @@
             <z-button icon="" :loading="loading1" @click="loading1 = !loading1">按钮</z-button>
             <z-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</z-button>
             <z-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</z-button>
-            <z-icon name="loading"></z-icon>
+            <z-button-group>
+                <z-button icon="left">上一页</z-button>
+                <z-button >更多</z-button>
+                <z-button icon="right" icon-position="right">下一页</z-button>
+            </z-button-group>
+
     </div>
     
     <script src="./src/app.js"></script>
