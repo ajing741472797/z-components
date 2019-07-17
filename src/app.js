@@ -14,12 +14,14 @@ new Vue({
     el:'#app',
     data:{
         loading1:false,
-        loading2:false,
+        loading2:true,
         loading3:false,
     }
 })
 
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 
 const expect = chai.expect
 
@@ -95,20 +97,16 @@ const expect = chai.expect
 {
  
     const Constructor = Vue.extend(Button)
-    const gButton = new Constructor({
+    const vm = new Constructor({
         propsData:{
             icon:'settings',
-            iconPosition:'right'
         }
     })
-    gButton.$mount()
-    gButton.$on('click',()=>{
-        console.log(1);
-        
-    })
-    let button = gButton.$el
+    vm.$mount()
+    let spy = chai.spy(()=>{}) //使用chai.spy监听回调函数
+    vm.$on('click',spy)
+    //希望这个函数被执行
+    let button = vm.$el
     button.click()
-    // gButton.$el.remove()
-    // gButton.$destroy()
-
+    expect(spy).to.have.been.called()
 }
