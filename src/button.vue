@@ -1,8 +1,6 @@
 <template>
     <button class="z-button" :class="{[`icon-${iconPosition}`]:true}">
-        <svg v-if="icon" class="icon">
-            <use :xlink:href="`#i-${icon}`"></use>
-        </svg>
+        <z-icon v-if="icon" :name="icon"></z-icon>
         <div class="content">
         <slot></slot>
         </div>
@@ -51,7 +49,7 @@ export default {
         > .content{
             order: 2
         }
-        > .icon{
+        > .z-icon{
             margin-right: .1em;
             order: 1
         }
@@ -60,7 +58,7 @@ export default {
             > .content{
                 order: 1
             }
-            > .icon{
+            > .z-icon{
                 margin-right: 0;
                 margin-left: .1em;
                 order:2
