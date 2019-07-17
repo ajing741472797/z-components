@@ -16,7 +16,10 @@ export default {
         icon:{},
         iconPosition:{
             type:String,
-            default:'left' //默认值left
+            default:'left' ,//默认值left
+            validator(value){
+             return value === 'left' || value ==='right'
+            } //属性检查器
         }
 
     }//写法
