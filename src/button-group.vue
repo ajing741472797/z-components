@@ -7,7 +7,18 @@
 
 <script>
 export default {
-    props:[]
+
+    mounted(){
+        console.log(this.$el.children);
+        for(let node of this.$el.children){
+            let name = node.nodeName.toLowerCase()
+            if(name !== 'button'){
+                console.warn(`z-button-group的子元素应该全是z-button,但是你写的是 ${name}`)
+            }
+
+        }
+        
+    }
     }
 </script>
 
@@ -18,7 +29,9 @@ export default {
 
         .z-button{
             border-radius: 0;
+            &:not(:first-child){
             margin-left: -1px;
+            }
             &:first-child{
                 border-top-left-radius: var(--border-radius);
                 border-bottom-left-radius: var(--border-radius);
