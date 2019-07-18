@@ -25,9 +25,10 @@ chai.use(spies)
 
 const expect = chai.expect
 
+
 //单元测试(给一个输入，如果等于输出，对的)
 
-//测按钮icon-settings是否正确
+//测按钮含有icon
 {
     const Constructor = Vue.extend(Button)
     const button = new Constructor({

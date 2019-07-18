@@ -9,7 +9,13 @@
 </template>
 
 <script>
+import Icon from './icon'
+
 export default {
+ components:{
+     'z-icon':Icon
+ },
+
     // props: ['icon','iconPosition']//写法一
     props:{
         icon:{},
@@ -44,7 +50,7 @@ export default {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            vertical-align: middle; // css遇到上下不对齐的情况，更改这个属性可以解决
+            vertical-align: middle; // css遇到上下不对齐的情况，设置这个属性可以解决
 
         &:hover{
             border-color: var(--border-color-hover)
@@ -77,11 +83,6 @@ export default {
             animation: spin 2s infinite linear;
         }
         }
-
-
-
-        
-
 
 </style>
 
