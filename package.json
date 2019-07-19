@@ -1,8 +1,8 @@
 {
   "name": "z-gulu",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "这是一个UI框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "parcel index.html",
     "dev-test": "parcel watch test/* --no-cache & karma start", 
