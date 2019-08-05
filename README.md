@@ -37,7 +37,7 @@
     npm i --save z-gulu
     ```
 
-3. 引入
+3. 引入 gulu
     ```
     import {Button, ButtonGroup, Icon} from 'z-gulu'
     import 'z-gulu/dist/index.css'
@@ -50,6 +50,7 @@
       }
     }
     ```
+ 
 
 
 ## 文档
