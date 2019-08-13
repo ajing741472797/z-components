@@ -25,12 +25,27 @@
         body{
             font-size: var(--font-size)
         }
-
+     
        
+    </style>
+    <style>
+           .box{
+            margin: 20px;
+            
+        }
     </style>
 </head>
 <body>
     <div id="app">
+        <div class="box">
+            <z-input value="你好" disabled></z-input>  
+            <z-input value="你好" readonly></z-input>  
+            <z-input value="你好"></z-input>  
+        </div>
+        <div class="box">
+            <z-input value="你好" error="姓名不能少于两个字" ></z-input>  
+        </div>
+        <div class="box">
             <z-button icon="" :loading="loading1" @click="loading1 = !loading1">按钮</z-button>
             <z-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</z-button>
             <z-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</z-button>
@@ -39,6 +54,8 @@
                 <z-button >更多</z-button>
                 <z-button icon="right" icon-position="right">下一页</z-button>
             </z-button-group>
+        </div>
+
             <div id="test"></div>
 
     </div>

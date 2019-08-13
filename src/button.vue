@@ -12,7 +12,8 @@
 import Icon from './icon'
 
 export default {
- components:{
+    name:"GuluButton",
+    components:{
      'z-icon':Icon
  },
 
