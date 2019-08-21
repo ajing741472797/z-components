@@ -31,7 +31,6 @@
     <style>
            .box{
             margin: 20px;
-            
         }
     </style>
 </head>
@@ -41,6 +40,9 @@
             <z-input value="你好" disabled></z-input>  
             <z-input value="你好" readonly></z-input>  
             <z-input value="你好"></z-input>  
+        </div>
+        <div class="box">
+            <z-input value="lala" @change="inputChange"></z-input>  
         </div>
         <div class="box">
             <z-input value="你好" error="姓名不能少于两个字" ></z-input>  
