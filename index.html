@@ -39,7 +39,8 @@
         <div class="box">
             <z-input value="你好" disabled></z-input>  
             <z-input value="你好" readonly></z-input>  
-            <z-input value="你好"></z-input>  
+            <z-input value="你好" v-model="message"></z-input>  
+            <p>{{message}}</p>
         </div>
         <div class="box">
             <z-input value="lala" @change="inputChange"></z-input>  
