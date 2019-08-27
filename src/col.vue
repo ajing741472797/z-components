@@ -1,7 +1,7 @@
 <template>
   <div class="col" :class="colClass"
   :style="colStyle">
-    <div style="border:1px solid green; height:100px">
+    <div style="height:100px">
     <slot></slot>
     </div>
   </div>
@@ -41,7 +41,6 @@ export default {
 <style lang="scss" scoped>
     .col{
         height: 100px;
-        width: 50%;
         // background: gray;
         // border: 1px solid red;
         padding: 0 10px;
