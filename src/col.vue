@@ -2,9 +2,7 @@
   <div class="col"
        :class="colClass"
        :style="colStyle">
-    <div style="height:100px">
       <slot></slot>
-    </div>
   </div>
 </template>
 
@@ -41,7 +39,7 @@ export default {
         if(!obj) {return []}
         let array = []
         if (obj.span) {array.push(`col-${str}${obj.span}`)}
-        if (obj.offset){array.push(`offset-${str}${obj.span}`)}
+        if (obj.offset){array.push(`offset-${str}${obj.offset}`)}
         return array
       }
   },
