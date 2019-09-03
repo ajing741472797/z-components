@@ -21,7 +21,7 @@
       --border-color-hover: #666
     }
     #app {
-      margin: 20px;
+      /* margin: 20px; */
     }
     body {
       font-size: var(--font-size)
@@ -29,20 +29,28 @@
   </style>
   <style>
     .box {
-      margin: 20px;
+      /* margin: 20px; */
     }
     .demo {
       background: #ddd;
       border: 1px solid #666;
-      height: 100px;
     }
   </style>
 </head>
 
 <body>
   <div id="app">
+    <z-layout style="height: 100vh">
 
-    <z-row>
+        <z-sider class="demo">sider</z-sider>
+        <z-layout>
+            <z-header class="demo">header</z-header>
+        <z-content class="demo">content</z-content>
+        <z-footer class="demo">footer</z-footer>
+        </z-layout>
+    </z-layout>
+
+    <!-- <z-row>
       <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
         <div class="demo"></div>
       </z-col>
@@ -64,38 +72,6 @@
 
     </z-row>
 
-    <!-- <div style="border: 1px solid blue">
-
-    <z-row gutter="20">
-      <z-col span="24" 
-      :ipad="{span:8}"
-      :narrow-pc="{span:4}"
-      :pc="{span:2}"
-      :wide-pc="{span:1}"
-
-      >1</z-col>
-      <z-col span="24"
-      :ipad="{span:16}"
-      :narrow-pc="{span:20}"
-      :pc="{span:22}"
-      :wide-pc="{span:23}">11</z-col>
-    </z-row>
-
-    <z-row gutter="20">
-      <z-col span="4">1</z-col>
-      <z-col span="17">11</z-col>
-    </z-row>
-    <z-row gutter="20">
-      <z-col span="4">1</z-col>
-      <z-col span="17">11</z-col>
-    </z-row>
-    <z-row gutter="20">
-      <z-col span="2">1</z-col>
-      <z-col span="2" >11</z-col>
-      <z-col span="16" >1</z-col>
-
-    </z-row>
-  </div>
 
     <hr>
     <div class="box">
@@ -121,7 +97,7 @@
       </z-button-group>
     </div>
 
-    <div id="test"></div> -->
+    <div id="test"></div>  -->
 
   </div>
 
