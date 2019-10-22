@@ -10,6 +10,8 @@ import Header from './header'
 import Sider from './sider'
 import Content from './content'
 import Footer from './footer'
+import Toast from './toast'
+
 
 
 
@@ -24,7 +26,7 @@ Vue.component('z-header',Header)
 Vue.component('z-content',Content)
 Vue.component('z-footer',Footer)
 Vue.component('z-sider',Sider)
-
+Vue.component('z-toast',Toast)
 
 new Vue({
     el:'#app',
@@ -33,6 +35,9 @@ new Vue({
         loading2:true,
         loading3:false,
         message:'hi'
+    },
+    created(){
+      this.$toast()
     },
     methods:{
         inputChange(e){
