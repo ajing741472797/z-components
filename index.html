@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>z-components组件</title>
-  <style>
+  <!-- <style>
     * {
       margin: 0;
       padding: 0;
@@ -62,12 +62,13 @@
     .footer {
       background: #ccc;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
   <div id="app">
-    <z-layout style="height: 100vh">
+    <button @click="showToast">showToast</button>
+    <!-- <z-layout style="height: 100vh">
 
       <z-sider>sider</z-sider>
       <z-layout>
@@ -77,7 +78,7 @@
       </z-layout>
     </z-layout>
 
-    <!-- <z-row>
+    <z-row>
       <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
         <div class="demo"></div>
       </z-col>
