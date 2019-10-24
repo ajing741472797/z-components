@@ -41,7 +41,16 @@ new Vue({
     },
     created(){
       this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字',{
-        enableHtml: false
+        position:'middle',
+        enableHtml: false,
+        closeButton:{
+          text:'已充值',
+          callback () {
+            console.log('lalala')
+          }
+        },
+        autoClose: false,
+        autoCloseDelay: 5
       })
 
     },
