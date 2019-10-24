@@ -40,6 +40,9 @@ new Vue({
         message:'hi'
     },
     created(){
+      this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字',{
+        enableHtml: false
+      })
 
     },
     methods:{
@@ -47,7 +50,15 @@ new Vue({
             console.log(e.target.value)
         },
         showToast(){
-          this.$toast('我是message')
+          this.$toast('我是 message',{
+            closeButton:{
+              text:'知道了',
+              callback(toast){
+                toast.log()
+                console.log('用户说他知道了')
+              }
+            }
+          })
         }
     }
 })
