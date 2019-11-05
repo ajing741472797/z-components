@@ -22,14 +22,13 @@ export default {
       type: [Boolean, Number],
       default: 5,
       validator(value){
-        return value === false || typeof value === 'number'
-  
+        return value === false || typeof value === 'number';
       }
     },
 
     closeButton: {
       type: Object,
-      default: () => {
+      default () {
         return {
           text: '关闭', callback: undefined
         }
@@ -51,7 +50,7 @@ export default {
       this.updateStyles()
       this.execAutoClose()
   },
-  computed:{
+  computed:{ 
     toastClasses(){
       return {
         [`position-${this.position}`]: true
@@ -61,6 +60,7 @@ export default {
   methods:{
     updateStyles () {
       this.$nextTick(() => {
+
         this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
       })
     },
@@ -68,7 +68,7 @@ export default {
     if(this.autoClose){
       setTimeout(() => {
         this.close()
-      }, this.autoCloseDelay*1000)
+      }, this.autoClose*1000)
     }
     },
     close(){

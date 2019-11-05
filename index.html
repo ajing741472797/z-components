@@ -67,9 +67,38 @@
 
 <body>
   <div id="app">
-    <button @click="showToast1">top</button>
+    <!-- <z-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
+      <z-tabs :selected.sync="selectedTab"> <!-- 语法糖，等价于上面 -->
+      <z-tabs-head>
+        <template slot="actions">
+            <button>设置</button>
+        </template>
+        <z-tabs-item name="woman">
+          <z-icon name="settings"></z-icon>
+          美女
+        </z-tabs-item>
+        <z-tabs-item name="man" disabled>
+          帅哥
+        </z-tabs-item>
+        <z-tabs-item name="car">
+          跑车
+        </z-tabs-item>
+      </z-tabs-head>
+      <z-tabs-body>
+        <z-tabs-pane name="woman">
+          美女相关资讯
+        </z-tabs-pane>
+        <z-tabs-pane name="man">
+          帅哥相关资讯
+        </z-tabs-pane>
+        <z-tabs-pane name="car">
+          跑车相关资讯
+        </z-tabs-pane>
+      </z-tabs-body>
+    </z-tabs>
+    <!-- <button @click="showToast1">top</button>
     <button @click="showToast2">middle</button>
-    <button @click="showToast3">bottom</button>
+    <button @click="showToast3">bottom</button> -->
 
     <!-- <z-layout style="height: 100vh">
 
