@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: 'GuluTabs',
   props: {
@@ -20,8 +21,18 @@ export default {
       }
     }
   },
-  created(){
-    // this.$emit('update:selected','xxx') //这样才能使 .sync 修饰符有用
+  data (){
+    return {
+      eventBus: new Vue()
+    }
+  },
+  provide(){
+    return {
+      eventBus: this.eventBus
+    }
+  },
+  mounted(){
+    this.eventBus.$emit('update:selected',this.selected) //这样才能使 .sync 修饰符有用
   }
 }
 </script>
