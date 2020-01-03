@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>z-components组件</title>
-<style>
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -66,10 +66,22 @@
 </head>
 
 <body style="margin: 0;">
-  <div id="app">
+  <div id="app" style="padding-top:100px;padding-left: 100px;">
+    <z-popover>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <button>点我</button>
+    </z-popover>
+    <z-popover>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <button>点我</button>
+    </z-popover>
     <!-- <z-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
-      <z-tabs :selected.sync="selectedTab"> <!-- 语法糖，等价于上面 -->
-      <z-tabs-head>
+    <!-- <z-tabs :selected.sync="selectedTab"> 语法糖，等价于上面 -->
+    <!-- <z-tabs-head>
         <template slot="actions">
             <button>设置</button>
         </template>
@@ -95,7 +107,7 @@
           跑车相关资讯
         </z-tabs-pane>
       </z-tabs-body>
-    </z-tabs>
+    </z-tabs> -->
     <!-- <button @click="showToast1">top</button>
     <button @click="showToast2">middle</button>
     <button @click="showToast3">bottom</button> -->
