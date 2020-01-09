@@ -1,7 +1,8 @@
 <template>
   <div class="popover"
-       @click.stop="xxx"
-       style="border:1px solid red">
+       @click="onClick"
+       style="border:1px solid red"
+       ref="popover">
     <div ref="contentWrapper"
          class="content-wrapper"
          v-if="visible">
@@ -23,33 +24,51 @@ export default {
     }
   },
   methods: {
-    xxx () {
-      this.visible = !this.visible
-      if (this.visible === true) {
-        setTimeout(() => {
-          document.body.appendChild(this.$refs.contentWrapper)
-          let { width, height, top, left } = this.$refs.triggerWrapper.getBoundingClientRect()
-          console.log(width, height, top, left)
-          this.$refs.contentWrapper.style.left = left+ window.scrollX +'px'
-          this.$refs.contentWrapper.style.top =  top+ window.scrollY +'px'
+    //定位popover
+    positonContent () {
+      document.body.appendChild(this.$refs.contentWrapper)
+      let { width, height, top, left } = this.$refs.triggerWrapper.getBoundingClientRect()
+      this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
+      this.$refs.contentWrapper.style.top = top + window.scrollY - 10 + 'px'
 
-          let eventHandler = () => {
-            this.visible = false
-            console.log('document 隐藏 popover')
+    },
+    onClickDocument(e) {
+        if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {
+          return        }
+          this.close()
+      },
+    open () {
+        this.visible = true
 
-            document.removeEventListener('click', eventHandler)
-          }
-          document.addEventListener('click', eventHandler)
-        }, 100)
+      setTimeout(() => {
+        this.positonContent()
+              document.addEventListener('click', this.onClickDocument)
+
+      }, 100)
+    },
+    close(){
+        this.visible = false
+        document.removeEventListener('click',this.onClickDocument)
+
+        console.log('关闭')
+
+    },
+    onClick (event) {
+      if (this.$refs.triggerWrapper.contains(event.target)) {
+        if (this.visible === true) {
+          this.close()
+          } else {
+          this.open()
+        }
+
       } else {
-        console.log('vm 隐藏 popover')
+
       }
+
     },
 
   },
   mounted () {
-    console.log('hi')
-    console.log(this.$refs.triggerWrapper)
   }
 }
 </script>
@@ -59,12 +78,11 @@ export default {
   display: inline-block;
   vertical-align: top;
   position: relative;
-
 }
-  .content-wrapper {
-    position: absolute;
-    border: 1px solid red;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-    transform: translateY(-100%);
-  }
+.content-wrapper {
+  position: absolute;
+  border: 1px solid red;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  transform: translateY(-100%);
+}
 </style>
