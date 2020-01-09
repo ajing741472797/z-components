@@ -32,39 +32,30 @@ export default {
       this.$refs.contentWrapper.style.top = top + window.scrollY - 10 + 'px'
 
     },
-    onClickDocument(e) {
-        if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {
-          return        }
-          this.close()
-      },
+    onClickDocument (e) {
+      if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.contentWrapper.contains(e.target))) {
+        return      }
+      this.close()
+    },
     open () {
-        this.visible = true
-
+      this.visible = true
       setTimeout(() => {
         this.positonContent()
-              document.addEventListener('click', this.onClickDocument)
-
+        document.addEventListener('click', this.onClickDocument)
       }, 100)
     },
-    close(){
-        this.visible = false
-        document.removeEventListener('click',this.onClickDocument)
-
-        console.log('关闭')
-
+    close () {
+      this.visible = false
+      document.removeEventListener('click', this.onClickDocument)
     },
     onClick (event) {
       if (this.$refs.triggerWrapper.contains(event.target)) {
         if (this.visible === true) {
           this.close()
-          } else {
+        } else {
           this.open()
         }
-
-      } else {
-
       }
-
     },
 
   },
