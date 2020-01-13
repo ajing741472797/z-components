@@ -69,15 +69,27 @@
   <div id="app" style="padding:50px;">
     <z-popover>
       <template slot="content">
-        <div>popoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopover </div>
+        <div>popover内容</div>
       </template>
-      <z-button>点我</z-button>
+      <z-button>上</z-button>
     </z-popover>
-    <z-popover>
+    <z-popover position='bottom'>
       <template slot="content">
         <div>popover内容</div>
       </template>
-      <z-button>点我</z-button>
+      <z-button>下</z-button>
+    </z-popover>
+    <z-popover position='left'>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <z-button>左</z-button>
+    </z-popover>
+    <z-popover position='right'>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <z-button>右</z-button>
     </z-popover>
     <!-- <z-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
     <!-- <z-tabs :selected.sync="selectedTab"> 语法糖，等价于上面 -->
