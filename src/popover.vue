@@ -18,14 +18,14 @@
 import Vue from 'vue'
 export default {
   name: 'GuluPopover',
-  
+
   data () {
     return {
       visible: false,
 
     }
   },
-    props: {
+  props: {
     position: {
       type: String,
       default: 'top',
