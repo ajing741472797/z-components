@@ -18,14 +18,31 @@
 import Vue from 'vue'
 export default {
   name: 'GuluPopover',
+  
   data () {
     return {
       visible: false,
 
     }
   },
+    props: {
+    position: {
+      type: String,
+      default: 'top',
+      validator (value) {
+        return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
+      }
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator (value) {
+        return ['click', 'hover'].indexOf(value) >= 0
+      }
+    }
+  },
   mounted () {
-    if (this.triggerWrapper === 'click') {
+    if (this.trigger === 'click') {
       this.$refs.popover.addEventListener('click', this.onClick)
     } else {
       this.$refs.popover.addEventListener('mouseenter', this.open)
@@ -33,7 +50,7 @@ export default {
     }
   },
   destroyed () {
-    if (this.triggerWrapper === 'click') {
+    if (this.trigger === 'click') {
       this.$refs.popover.removeEventListener('click', this.onClick)
     } else {
       this.$refs.popover.removeEventListener('mouseenter', this.open)
@@ -57,22 +74,7 @@ export default {
 
     }
   },
-  props: {
-    position: {
-      type: String,
-      default: 'top',
-      validator (value) {
-        return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
-      }
-    },
-    trigger: {
-      type: String,
-      default: 'click',
-      validator (value) {
-        return ['click', 'hover'].indexOf(value) >= 0
-      }
-    }
-  },
+
   methods: {
     //定位popover
     //定位popover
